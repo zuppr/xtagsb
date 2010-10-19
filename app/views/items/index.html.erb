@@ -1,0 +1,29 @@
+<h1>Listing items</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Alpha numeric</th>
+    <th>Approved</th>
+    <th>Click count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.url %></td>
+    <td><%= item.alpha_numeric %></td>
+    <td><%= item.approved %></td>
+    <td><%= item.click_count %></td>
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Item', new_item_path %>
